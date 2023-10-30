@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const SideBar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
   return (
-    <div>
+    <div className="hidden md:block">
       {isMenuOpen && (
         <div className="shadow-lg w-48 pl-4">
           <ul>

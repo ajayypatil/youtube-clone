@@ -56,13 +56,13 @@ const Header = () => {
   };
 
   return (
-    <div className="sticky grid grid-flow-col p-5 m-2 shadow-lg ">
+    <div className="sticky flex flex-col md:grid md:grid-flow-col p-5 m-2 shadow-lg ">
       <div className="flex col-span-1">
         <img
           onClick={() => {
             toggleMenuHandler();
           }}
-          className="h-8 -mt-1 cursor-pointer"
+          className="h-8 -mt-1 cursor-pointer hidden md:block"
           alt="menu"
           src="https://static.vecteezy.com/system/resources/previews/021/190/402/original/hamburger-menu-filled-icon-in-transparent-background-basic-app-and-web-ui-bold-line-icon-eps10-free-vector.jpg"
         ></img>
@@ -70,11 +70,12 @@ const Header = () => {
           to={"/"}
           onClick={() => {
             dispatch(showMenu());
-            dispatch(clearMessage())
+            dispatch(clearMessage());
+            setSearchQuery("")
           }}
         >
           <img
-            className="h-6 mx-1"
+            className="h-6 mx-6 md:mx-1 mb-2 md:mb-0"
             alt="youtube-logo"
             src="https://www.gstatic.com/youtube/img/promos/growth/864dc47e45a7a0b06602f73155980de282b939a6d0adc7bdcda231f965bf796a_640x48.png"
           ></img>
@@ -103,7 +104,7 @@ const Header = () => {
         </button>
       </div>
       {showSuggestions && (
-        <ul className="fixed left-[480px] top-20 bg-white w-[448px] shadow-lg rounded-lg">
+        <ul className="fixed top-[100px] md:left-[480px] md:top-20 bg-white md:w-[448px] shadow-lg rounded-lg">
           <li>
             {suggestions.map((s) => {
               return (
@@ -121,7 +122,7 @@ const Header = () => {
       )}
       <div>
         <img
-          className="h-8 col-span-1"
+          className="h-8 md:col-span-1 hidden md:block"
           alt="user-icon"
           src="https://cdn-icons-png.flaticon.com/512/666/666201.png"
         ></img>

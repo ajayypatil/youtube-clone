@@ -21,7 +21,7 @@ const VideoContainer = () => {
     setIsLoading(false);
   };
   return (
-    <div className="flex flex-wrap">
+    <div className="flex flex-col md:flex-wrap md:flex-row">
       {isLoading ? (
         <Loader />
       ) : (

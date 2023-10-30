@@ -16,20 +16,18 @@ const WatchPage = () => {
   }, []);
   return (
     <div className="flex flex-col w-full">
-      <div className="px-5 flex">
-        <div>
-          {" "}
+      <div className="px-5 flex flex-col md:flex-row">
+        <div >
           <iframe
-            width="1100"
-            height="550"
+            className="w-[345px] md:w-[1100px]
+            md:h-[550px]"
             src={"https://www.youtube.com/embed/" + vId}
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowFullScreen
           ></iframe>
         </div>
-        <div className="w-full"><LiveChat/></div>
+        <div className="w-full mt-5 md:mt-0"><LiveChat/></div>
       </div>
       <CommentsContainer />
     </div>
