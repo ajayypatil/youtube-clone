@@ -5,6 +5,7 @@ import { GOOGLE_API_KEY, YOUTUBE_SEARCH_API } from "../utils/constants";
 import { cacheResults } from "../utils/searchSlice";
 import { addVideos } from "../utils/videoSlice";
 import { Link, useNavigate } from "react-router-dom";
+import { clearMessage } from "../utils/chatSlice";
 
 const Header = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -69,6 +70,7 @@ const Header = () => {
           to={"/"}
           onClick={() => {
             dispatch(showMenu());
+            dispatch(clearMessage())
           }}
         >
           <img

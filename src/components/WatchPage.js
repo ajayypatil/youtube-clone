@@ -4,6 +4,7 @@ import { closeMenu } from "../utils/appSlice";
 import { useSearchParams } from "react-router-dom";
 import CommentsContainer from "./CommentsContainer";
 import Header from "./Header";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const dispatch = useDispatch();
@@ -14,17 +15,21 @@ const WatchPage = () => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div className="flex flex-col">
-      <div className="px-5">
-        <iframe
-          width="1000"
-          height="500"
-          src={"https://www.youtube.com/embed/" + vId}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        ></iframe>
+    <div className="flex flex-col w-full">
+      <div className="px-5 flex">
+        <div>
+          {" "}
+          <iframe
+            width="1100"
+            height="550"
+            src={"https://www.youtube.com/embed/" + vId}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="w-full"><LiveChat/></div>
       </div>
       <CommentsContainer />
     </div>
