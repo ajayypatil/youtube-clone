@@ -1,6 +1,5 @@
 import { Provider } from "react-redux";
 import Body from "./components/Body";
-import Header from "./components/Header";
 import appStore from "./utils/appStore";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
@@ -26,8 +25,8 @@ function App() {
   ]);
   return (
     <Provider store={appStore}>
-      <div>
-        <Header />
+      <div className="">
+        
         <RouterProvider router={appRouter}></RouterProvider>
       </div>
     </Provider>
